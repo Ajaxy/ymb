@@ -1,6 +1,6 @@
 {
   "name": "ymb",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Builder for projects based on ym modules. Built on top of gulp task runner.",
   "author": "Alexander Zinchuk <alexander@zinchuk.com>",
   "repository": {
