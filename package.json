@@ -1,6 +1,6 @@
 {
   "name": "ymb",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Builder for projects based on ym modules. Built on top of gulp task runner.",
   "author": "Alexander Zinchuk <alexander@zinchuk.com>",
   "repository": {
@@ -43,10 +43,10 @@
     "through2": "^0.6.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "vow": "https://github.com/Ajaxy/vow",
+    "vow": "Ajaxy/vow",
     "vow-fs": "^0.3.2",
     "vow-node": "^0.2.1",
-    "ym": "https://github.com/Ajaxy/ym",
+    "ym": "Ajaxy/ym",
     "ym-helpers": "^0.1.0"
   },
   "bin": {
