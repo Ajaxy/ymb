@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://api-maps.yandex.ru/2.1-dev/?lang=ru-RU&mode=debug"></script>
+    <script type="text/javascript" src="app/build/game.js"></script>
+    <script type="text/javascript">
+        ymaps.modules.require(['package.game']).spread(function (ns) {
+            var game = new ns.Game();
+
+            game.addPlayer('Alex');
+            game.addPlayer('Jack', 'us');
+
+            game.start();
+        }).done();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

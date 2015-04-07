@@ -1,0 +1,4 @@
+{
+    "target": "standalone",
+    "minify": false
+}

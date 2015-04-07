@@ -1,0 +1,18 @@
+{
+    "src": {
+        "js": "src/**/*.js",
+        "css": "src/**/*.css",
+        "templates": "src/**/*.ymtpl"
+    },
+    "dest": "build/",
+    "namespace": "ym",
+    "target": "plugin",
+    "serverUrl": null,
+    "asyncMap": false,
+    "initialMap": null,
+    "fallbackFilter": null,
+    "fallbackModule": null,
+    "store": "solid",
+    "concatTo": "all.js",
+    "minify": true
+}
