@@ -1,6 +1,6 @@
 {
   "name": "ymb",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Builder for projects based on ym modules. Built on top of gulp task runner.",
   "author": "Alexander Zinchuk <alexander@zinchuk.com>",
   "repository": {
@@ -41,8 +41,7 @@
     "lodash": "^2.4.1",
     "minimist": "^1.1.0",
     "through2": "^0.6.2",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
+    "vinyl": "^0.4.6",
     "vow": "Ajaxy/vow",
     "vow-fs": "^0.3.2",
     "vow-node": "^0.2.1",
