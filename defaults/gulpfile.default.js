@@ -4,8 +4,7 @@ var path = require('path'),
     // You can require your own `gulp` version.
     gulp = ymb.gulp;
 
-var streams = [],
-    cfg = ymb.resolveBuildConfig();
+var cfg = ymb.resolveBuildConfig();
 
 gulp.task('ym-clean', function (cb) {
     ymb.del(path.resolve(cfg.dest), { force: true }, cb);
