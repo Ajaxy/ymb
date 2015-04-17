@@ -1,15 +1,15 @@
 {
   "name": "ymb",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Builder for projects based on ym modules. Built on top of gulp task runner.",
   "author": "Alexander Zinchuk <alexander@zinchuk.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yandex/ymb"
+    "url": "https://github.com/Ajaxy/ymb"
   },
   "bugs": {
     "type": "git",
-    "url": "https://github.com/yandex/ymb/issues"
+    "url": "https://github.com/Ajaxy/ymb/issues"
   },
   "keywords": [
     "ym",
