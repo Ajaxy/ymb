@@ -5,11 +5,11 @@
   "author": "Alexander Zinchuk <alexander@zinchuk.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yandex/ymb"
+    "url": "https://github.com/Ajaxy/ymb"
   },
   "bugs": {
     "type": "git",
-    "url": "https://github.com/yandex/ymb/issues"
+    "url": "https://github.com/Ajaxy/ymb/issues"
   },
   "keywords": [
     "ym",
