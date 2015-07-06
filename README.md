@@ -5,7 +5,7 @@ Builder for projects based on [ym modules](https://www.npmjs.org/package/ym). Bu
 
 Requirements
 ------------
-ymb works with Node.js ^0.10.
+ymb works with Node.js 0.10.
 
 Getting Started
 ---------------
