@@ -38,12 +38,11 @@ gulp.task('ym-build', ['ym-clean'], function () {
     if (standalone) {
         chain.push(plg.modules.plus(cfg));
         chain.push(plg.modules.helpers(cfg));
+        chain.push(plg.modules.namespace(cfg));
         if (async) {
             chain.push(plg.modules.map(cfg));
             chain.push(plg.modules.async(cfg));
         }
-        chain.push(plg.modules.ready(cfg));
-        chain.push(plg.modules.namespace(cfg));
     } else {
         if (async) {
             chain.push(plg.modules.map(cfg));
