@@ -59,6 +59,9 @@ ymb help					    # Displays this message.
     // More information about `yms` and examples of async projects is here: https://www.npmjs.org/package/yms
     "store": "solid",
 
+    // You can specify array of modules to be preloaded along with ones specified in GET params and `ready` method.
+    "preload": [],
+
     // You can insert another async layer, when information about certain modules ("modules map") is not included into `init.js`,
     // but can be loaded with another HTTP request to `yms` server. These features are experimental and may cause issues.
     "asyncMap": false,

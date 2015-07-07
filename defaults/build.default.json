@@ -13,6 +13,7 @@
     "fallbackFilter": null,
     "fallbackModule": null,
     "store": "solid",
+    "preload": [],
     "concatTo": "all.js",
     "minify": true
 }
