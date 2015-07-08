@@ -91,7 +91,7 @@ that will be called with needed params in a code added by `yms` server.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config |
+| cfg | <code>Object</code> | Config |
 
 <a name="modules.helpers"></a>
 ## modules.helpers() ⇒ <code>stream.Transform</code>
@@ -116,7 +116,7 @@ Check out child plugins for more info.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config |
+| cfg | <code>Object</code> | Config |
 
 <a name="modules.minify"></a>
 ## modules.minify() ⇒ <code>stream.Transform</code>
@@ -159,7 +159,7 @@ Injects main JS object `ym` with base project params as a part of `init.js`.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config |
+| cfg | <code>Object</code> | Config |
 
 <a name="modules.store"></a>
 ## modules.store(cfg) ⇒ <code>stream.Transform</code>
@@ -171,7 +171,7 @@ Check out child plugins for more info.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config |
+| cfg | <code>Object</code> | Config |
 
 <a name="modules.ym"></a>
 ## modules.ym() ⇒ <code>stream.Transform</code>
