@@ -70,7 +70,8 @@ ymb help					    # Displays this message.
     // You can use different modes overriding global options, but don't forget to specify one of them when running builder.
     // "modes": {
     //     "debug": {
-    //         "minify": "false"
+    //         "default": true,
+    //         "minify": false
     //     }
     // }
 }
