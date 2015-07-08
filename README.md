@@ -83,7 +83,7 @@ If you want more flexibility you can also override default `gulpfile.js` by clon
 ####Plugins usage:####
 If you're already using `gulp` and have your own `gulpfile.js` you can require our plugins directly and use them in your tasks.
 
-Check out [*ymb plugins documentation*](docs/plugins.md).
+Check out [**ymb plugins documentation**](docs/plugins.md).
 
 ````javascript
 var gulp = require('gulp'),
