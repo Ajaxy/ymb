@@ -46,8 +46,6 @@ Check out child plugins for more info.</p>
 <dd><p>Stores built modules and info files into a specified folder in a disk.
 Check out child plugins for more info.</p>
 </dd>
-<dt><a href="#modules.storeAsync">modules.storeAsync()</a> ⇒ <code>stream.Transform</code></dt>
-<dd></dd>
 <dt><a href="#modules.ym">modules.ym()</a> ⇒ <code>stream.Transform</code></dt>
 <dd><p>In case of standalone project injects <code>ym</code> modular system source code as part of <code>init.js</code> contents.
 In case of plugin project only refers a property from a main project namespace.</p>
@@ -75,13 +73,13 @@ so pipeline contents will get inside the first plugin and the go out from the la
 Wraps CSS code into an `ym` module, that will use `system.provideCss` to register it in browser.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="js.closure"></a>
 ## js.closure() ⇒ <code>stream.Transform</code>
 Wraps code in a simple JS closure.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="modules.async"></a>
 ## modules.async(cfg) ⇒ <code>stream.Transform</code>
 Adds support for asynchronous loading of modules.
@@ -89,49 +87,49 @@ Requires files needed for current target, joins and wraps them into a function,
 that will be called with needed params in a code added by `yms` server.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config. |
+| cfg | <code>String</code> | Config |
 
 <a name="modules.helpers"></a>
 ## modules.helpers() ⇒ <code>stream.Transform</code>
 Injects modules from `ym-helpers` package.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 **See**: https://www.npmjs.com/package/ym-helpers  
 <a name="modules.init"></a>
 ## modules.init() ⇒ <code>stream.Transform</code>
 Joins all 'init#' parts into a single `init.js` file with the right order.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="modules.map"></a>
 ## modules.map(cfg) ⇒ <code>stream.Transform</code>
 Collects information about modules in the src path.
 Check out child plugins for more info.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config. |
+| cfg | <code>String</code> | Config |
 
 <a name="modules.minify"></a>
 ## modules.minify() ⇒ <code>stream.Transform</code>
 Runs `uglify()` on JS files.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="modules.namespace"></a>
 ## modules.namespace() ⇒ <code>stream.Transform</code>
 Adds project namespace into the global context.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="modules.plus"></a>
 ## modules.plus() ⇒ <code>stream.Transform</code>
 Injects `vow` and `Modules Plus` code.
@@ -146,7 +144,7 @@ Injects `vow` and `Modules Plus` code.
 — etc.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 **See**
 
 - https://www.npmjs.com/package/vow
@@ -157,11 +155,11 @@ Injects `vow` and `Modules Plus` code.
 Injects main JS object `ym` with base project params as a part of `init.js`.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config. |
+| cfg | <code>String</code> | Config |
 
 <a name="modules.store"></a>
 ## modules.store(cfg) ⇒ <code>stream.Transform</code>
@@ -169,53 +167,45 @@ Stores built modules and info files into a specified folder in a disk.
 Check out child plugins for more info.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| cfg | <code>String</code> | Config. |
+| cfg | <code>String</code> | Config |
 
-<a name="modules.storeAsync"></a>
-## modules.storeAsync() ⇒ <code>stream.Transform</code>
-**Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
-**Ingore**: Creates directory structure and stores modules and info files in a build path.
-Modules are renamed regarding to MD5 hash sum of their contents.
-Generates and stores `hashes.json` info file that matches short aliases of modules with hash-based names.
-Used for asynchronous modules loading.  
 <a name="modules.ym"></a>
 ## modules.ym() ⇒ <code>stream.Transform</code>
 In case of standalone project injects `ym` modular system source code as part of `init.js` contents.
 In case of plugin project only refers a property from a main project namespace.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 **See**: https://www.npmjs.com/package/ym  
 <a name="templates.compile"></a>
 ## templates.compile() ⇒ <code>stream.Transform</code>
 Pre-compiles HTML templates using `template.Parser` module from `ym-helpers` package.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 **See**: https://www.npmjs.com/package/ym-helpers  
 <a name="templates.toModules"></a>
 ## templates.toModules() ⇒ <code>stream.Transform</code>
 Wraps HTML code into an `ym` module.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="util.eachInStream"></a>
 ## util.eachInStream() ⇒ <code>stream.Transform</code>
 Helper for running handlers only for non empty buffers in the stream.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="util.join"></a>
 ## util.join() ⇒ <code>stream.Transform</code>
 Allows to join stream as an "incoming branch" for some other main stream.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
 <a name="util.pipeChain"></a>
 ## util.pipeChain() ⇒ <code>stream.Transform</code>
 Allows to create a chain of plugins where streams will be piped from one plugin to another.
@@ -223,4 +213,4 @@ Later this chain can be injected anywhere in a pipeline,
 so pipeline contents will get inside the first plugin and the go out from the last one.
 
 **Kind**: global function  
-**Returns**: <code>stream.Transform</code> - Stream.  
+**Returns**: <code>stream.Transform</code> - Stream  
