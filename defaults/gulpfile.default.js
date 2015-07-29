@@ -10,11 +10,7 @@ gulp.task('ym-clean', function (cb) {
     ymb.del(path.resolve(cfg.dest), { force: true }, cb);
 });
 
-gulp.task('ym-watch', function () {
-    return gulp.watch([cfg.src.js, cfg.src.css, cfg.src.templates], ['ym-build']);
-});
-
-gulp.task('ym-build', ['ym-clean'], function () {
+gulp.task('ym-rebuild', function () {
     var async = cfg.store == 'async',
         standalone = cfg.target == 'standalone',
         chain = [],
@@ -60,4 +56,18 @@ gulp.task('ym-build', ['ym-clean'], function () {
     return modules
         .pipe(plg.util.pipeChain(chain))
         .pipe(gulp.dest(path.resolve(cfg.dest)));
+});
+
+gulp.task('ym-build', ['ym-clean', 'ym-rebuild']);
+
+gulp.task('ym-watch', ['ym-build'], function () {
+    var watcher = gulp.watch([cfg.src.js, cfg.src.css, cfg.src.templates], ['ym-rebuild']);
+
+    watcher.on('change', function (e) {
+        if (e.type == 'deleted') {
+            plg.remember.forget('ymb#default', e.path);
+        }
+    });
+
+    return watcher;
 });
