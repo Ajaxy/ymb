@@ -91,8 +91,8 @@ var gulp = require('gulp'),
 
 gulp.task('templates', function () {
     gulp.src(/* .. */)
-        .pipe(/* .. */);
-        .pipe(ymbPlugins.templates.compile());
+        .pipe(/* .. */)
+        .pipe(ymbPlugins.templates.compile())
         .pipe(/* .. */);
 });
 ````
