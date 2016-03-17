@@ -1,5 +1,5 @@
 var path = require('path'),
-    ymb = require('ymb'),
+    ymb = require('../'),
     plg = ymb.plugins,
     // You can require your own `gulp` version.
     gulp = ymb.gulp;
