@@ -48,7 +48,7 @@
     "vow-fs": "^0.3.2",
     "vow-node": "^0.3.0",
     "ym": "ajaxy/ym",
-    "ym-helpers": "^0.4.1"
+    "ym-helpers": "^1.0.0-rc"
   },
   "bin": {
     "ymb": "./bin/ymb.js"
