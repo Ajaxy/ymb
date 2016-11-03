@@ -19,6 +19,7 @@ gulp.task('ym-rebuild', function () {
     js = gulp.src(cfg.src.js);
 
     css = gulp.src(cfg.src.css)
+        .pipe(plg.css.images(cfg))
         .pipe(plg.css.optimize(cfg))
         .pipe(plg.css.toModules(cfg));
 
