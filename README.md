@@ -47,8 +47,8 @@ ymb help					    # Displays this message.
 
     // Set to `false` to prevent inline data URI for images in CSS. Add `#no-datauri` to image path to prevent for particular file.
     // You will need to route static handler for `build/{publicDir}/images` on server side.
-    dataUriImages: true,
-    publicDir: "public",
+    "dataUriImages": true,
+    "publicDir": "public",
 
     // If you want to make a plugin for existing project providing `ym` modular system (i.e. `Yandex Maps API`),
     // set `target` option to `plugin`. Option `namespace` should contain name of the main project global namespace.
