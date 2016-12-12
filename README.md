@@ -45,6 +45,16 @@ ymb help					    # Displays this message.
     // Output files optimization.
     "minify": true,
 
+    // Minity options
+    "minifyOptions": {
+        // Extension of target files
+        "extension": "js",
+        // gulp-uglify options. See more https://www.npmjs.com/package/gulp-uglify#options
+        "uglifyOptions": {
+            // ...
+        }
+    }
+
     // Set to `false` to prevent inline data URI for images in CSS. Add `#no-datauri` to image path to prevent for particular file.
     // You will need to route static handler for `build/{publicDir}/images` on server side.
     "dataUriImages": true,
