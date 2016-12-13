@@ -15,7 +15,9 @@
     "store": "solid",
     "preload": [],
     "concatTo": "all.js",
-    "minify": true,
+    "minify": {
+        "extension": "js"
+    },
     "dataUriImages": true,
     "publicDir": "public"
 }
