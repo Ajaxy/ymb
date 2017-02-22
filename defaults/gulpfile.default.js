@@ -1,74 +1,56 @@
 var path = require('path'),
+    gulp = require('gulp'),
     ymb = require('ymb'),
-    plg = ymb.plugins,
-    // You can require your own `gulp` version.
-    gulp = ymb.gulp;
+    plg = ymb.plugins;
 
 var cfg = ymb.resolveBuildConfig();
 
-gulp.task('ym-clean', function (cb) {
-    ymb.del(path.resolve(cfg.dest), { force: true }, cb);
-});
+gulp.task('build', build);
+gulp.task('rebuild', gulp.series(clean, build));
+gulp.task('dev', gulp.series('rebuild', watch));
 
-gulp.task('ym-rebuild', function () {
-    var async = cfg.store == 'async',
-        standalone = cfg.target == 'standalone',
-        chain = [],
+function clean (cb) {
+    ymb.del(path.resolve(cfg.dest), { force: true })
+        .then(function () { cb(); });
+}
+
+function build () {
+    var isAsync = cfg.store == 'async',
+        isStandalone = cfg.target == 'standalone',
+        needMinify = Boolean(cfg.minify),
+        srcOpts = { since: gulp.lastRun(build) },
         js, css, templates, modules;
 
-    js = gulp.src(cfg.src.js);
+    js = gulp.src(cfg.src.js, srcOpts);
 
-    css = gulp.src(cfg.src.css)
+    css = gulp.src(cfg.src.css, srcOpts)
         .pipe(plg.css.images(cfg))
         .pipe(plg.css.optimize(cfg))
         .pipe(plg.css.toModules(cfg));
 
-    templates = gulp.src(cfg.src.templates)
+    templates = gulp.src(cfg.src.templates, srcOpts)
         .pipe(plg.templates.compile(cfg))
         .pipe(plg.templates.toModules(cfg));
 
-    modules = ymb.es.merge(js, css, templates);
-
-    chain.push(plg.modules.setup(cfg));
-    chain.push(plg.modules.ym(cfg));
-
-    if (standalone) {
-        chain.push(plg.modules.plus(cfg));
-        chain.push(plg.modules.helpers(cfg));
-        if (async) {
-            chain.push(plg.modules.map(cfg));
-            chain.push(plg.modules.async(cfg));
-        }
-        chain.push(plg.modules.namespace(cfg));
-    } else {
-        if (async) {
-            chain.push(plg.modules.map(cfg));
-            chain.push(plg.modules.async(cfg));
-        }
-    }
-
-    chain.push(plg.modules.init(cfg));
-    chain.push(plg.modules.store(cfg));
-
-    if (cfg.minify) {
-        chain.push(plg.modules.minify(cfg));
-    }
-
-    return modules
-        .pipe(plg.util.pipeChain(chain))
+    return ymb.es.merge(js, css, templates)
+        .pipe(plg.modules.setup(cfg))
+        .pipe(plg.modules.ym(cfg))
+        .pipe(plg.if(isStandalone, plg.modules.plus(cfg)))
+        .pipe(plg.if(isStandalone, plg.modules.helpers(cfg)))
+        .pipe(plg.if(isAsync, plg.modules.map(cfg)))
+        .pipe(plg.if(isAsync, plg.modules.async(cfg)))
+        .pipe(plg.if(isStandalone, plg.modules.namespace(cfg)))
+        .pipe(plg.modules.init(cfg))
+        .pipe(plg.modules.store(cfg))
+        .pipe(plg.if(needMinify, plg.modules.minify(cfg)))
         .pipe(gulp.dest(path.resolve(cfg.dest)));
-});
+}
 
-gulp.task('ym-build', ['ym-clean', 'ym-rebuild']);
 
-gulp.task('ym-watch', ['ym-build'], function () {
-    var watcher = gulp.watch([cfg.src.js, cfg.src.css, cfg.src.templates], ['ym-rebuild']);
-
-    watcher.on('change', function (e) {
-        if (e.type == 'deleted') {
-            plg.remember.forget('ymb#default', e.path);
-        }
-    });
-
-    return watcher;
-});
+function watch () {
+    return gulp.watch([
+        cfg.src.js,
+        cfg.src.css,
+        cfg.src.templates
+    ], build);
+}
