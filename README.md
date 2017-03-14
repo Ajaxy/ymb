@@ -9,7 +9,8 @@ ymb works with Node.js 0.10+.
 
 Getting Started
 ---------------
-####CLI usage:####
+**CLI usage**
+
 You can install `ymb` globally using Node Package Manager (npm):
 
     npm install --save-dev ymb
@@ -17,16 +18,17 @@ You can install `ymb` globally using Node Package Manager (npm):
 Then you can use `node_modules/.bin/ymb` console command to build your project, create configuration files or setup auto-build task (watch) for any file changes.
 Builder will then try to find your `build.json` and `gulpfile.js` configuration files or use default ones.
 
-````bash
+```bash
 node_modules/.bin/ymb configure [DIR=.] [build.json] [gulpfile.js] [-f] # Makes a copy of default `build.json` and/or `gulpfile.js` in specified directory.
 node_modules/.bin/ymb dev [DIR=.] [-m <mode>]		# Runs gulp task `dev` that will rebuild project on any change of source files specified in `build.json`.
 node_modules/.bin/ymb [build] [DIR=.] [-m <mode>]		# Runs gulp task `build` described by local or default `gulpfile.js`.
-````
+```
 
-####Explaining build.json:####
+**Explaining build.json**
+
 `build.json` contains build settings. You can copy the default one into your project dir with `ymb configure .` and then override it.
 
-````javascript
+```javascript
 {
     // Globs for files to be processed. Related to project dir.
     "src": {
@@ -84,17 +86,19 @@ node_modules/.bin/ymb [build] [DIR=.] [-m <mode>]		# Runs gulp task `build` desc
     //     }
     // }
 }
-````
+```
 
-####Explaining gulpfile.js:####
+**Explaining gulpfile.js**
+
 If you want more flexibility you can also override default `gulpfile.js` by cloning it locally with `ymb configure . gulpfile.js`. Read more about gulpfiles on [gulp project page](https://github.com/gulpjs/gulp/).
 
-####Plugins usage:####
+**Plugins usage**
+
 If you're already using `gulp` and have your own `gulpfile.js` you can require our plugins directly and use them in your tasks.
 
 Check out [**ymb plugins documentation**](docs/plugins.md).
 
-````javascript
+```javascript
 var gulp = require('gulp'),
     ymbPlugins = require('ymb').plugins;
 
@@ -104,4 +108,4 @@ gulp.task('templates', function () {
         .pipe(ymbPlugins.templates.compile())
         .pipe(/* .. */);
 });
-````
+```
