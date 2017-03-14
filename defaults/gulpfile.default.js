@@ -46,7 +46,6 @@ function build () {
         .pipe(gulp.dest(path.resolve(cfg.dest)));
 }
 
-
 function watch () {
     return gulp.watch([
         cfg.src.js,

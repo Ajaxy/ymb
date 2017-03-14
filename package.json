@@ -56,7 +56,7 @@
   "scripts": {
     "docs": "jsdoc2md \"lib/plugins/**/*.js\" > docs/plugins.md"
   },
-  "preferGlobal": true,
+  "preferGlobal": false,
   "license": "MPL-2.0",
   "devDependencies": {
     "jsdoc-to-markdown": "^1.1.1"

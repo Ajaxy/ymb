@@ -1,27 +1,26 @@
 ymb
 ======
 
-Builder for projects based on [ym modules](https://www.npmjs.org/package/ym). Built on top of [gulp](https://www.npmjs.org/package/gulp) task runner.
+Builder for projects based on [ym modules](https://www.npmjs.org/package/ym). Built on top of [gulp@^4](https://www.npmjs.org/package/gulp) task runner.
 
 Requirements
 ------------
-ymb works with Node.js 0.10.
+ymb works with Node.js 0.10+.
 
 Getting Started
 ---------------
 ####CLI usage:####
 You can install `ymb` globally using Node Package Manager (npm):
 
-    npm install -g ymb
+    npm install --save-dev ymb
 
-Then you can use `ymb` console command to build your project, create configuration files or setup auto-build task (watch) for any file changes.
+Then you can use `node_modules/.bin/ymb` console command to build your project, create configuration files or setup auto-build task (watch) for any file changes.
 Builder will then try to find your `build.json` and `gulpfile.js` configuration files or use default ones.
 
 ````bash
-ymb [build] [DIR=.] [-m <mode>]		# Runs gulp task `ym-build` described by local or default `gulpfile.js`.
-ymb watch [DIR=.] [-m <mode>]		# Setups gulp task `ym-watch` that will run `ym-build` on any change of source files specified in `build.json`.
-ymb configure [DIR=.] [build.json] [gulpfile.js] [-f] # Makes a copy of default `build.json` and/or `gulpfile.js` in specified directory.
-ymb help					    # Displays this message.
+node_modules/.bin/ymb configure [DIR=.] [build.json] [gulpfile.js] [-f] # Makes a copy of default `build.json` and/or `gulpfile.js` in specified directory.
+node_modules/.bin/ymb dev [DIR=.] [-m <mode>]		# Runs gulp task `dev` that will rebuild project on any change of source files specified in `build.json`.
+node_modules/.bin/ymb [build] [DIR=.] [-m <mode>]		# Runs gulp task `build` described by local or default `gulpfile.js`.
 ````
 
 ####Explaining build.json:####
