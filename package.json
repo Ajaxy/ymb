@@ -41,6 +41,7 @@
     "lodash": "^4.6.1",
     "md5-jkmyers": "0.0.1",
     "minimist": "^1.1.0",
+    "moment": "^2.17.1",
     "through2": "^2.0.1",
     "vinyl": "^1.1.1",
     "vinyl-file": "^2.0.0",
