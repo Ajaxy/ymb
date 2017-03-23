@@ -1,4 +1,4 @@
-2.0 (2017/02)
+2.0 (2017/03)
 ===
 - Get rid of `hashes.json` in favor of generating hashes from short aliases
 - Performance optimizations: **~2 times faster** build and watch/rebuild
